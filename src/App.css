@@ -1,0 +1,12 @@
+.card{
+    width: 200px;
+    min-height: 250px;
+    background: blue;
+    color: white;
+    float: left;
+    margin: 5px;
+}
+
+.card a{
+    color: red;
+}

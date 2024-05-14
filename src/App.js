@@ -2,66 +2,25 @@ import React from 'react'
 import './App.css'
 import './header.css'
 
-
-
 const App = () => {
 
-  const qeydiyyat = false;
-  let Text = ""
-
-  if(qeydiyyat){
-    Text = "Çıxış 1"
-  }else{
-    Text = "Giriş 2"
-  }
-  
-    const Vaqif = () => {
-      return (
-        <div className='elmeddin'>
-          <h1>Hello</h1>
-          <p>Lesson 1</p>
-        </div>
-      )
-    }
-
-    const Murad = () => {
-      return (
-        <div className="main"></div>
-      )
-    }
-
-
-    const Ayxan = () => {
- 
-        return (
-          <div className="ayxan_form">
-            <label htmlFor="yash">Yashinizi daxil edin</label>
-            <input type="text"
-              placeholder='Yawinizi daxil edin'
-              id='yash'
-              style={{
-                width: "200px",
-                height: "50px",
-                color: "green"
-              }} />
-            <button>{Text}</button>
-          </div>
-        )
-      
-    }
-
+  const WhoAmI = ({name, surname, link, text}) => {
     return (
-      <div className="demo">
-        <Murad />
-        <Vaqif />
-        <Murad />
-        <Murad />
-        <Ayxan />
+      <div className='card'>
+        <h3>Menim adim {name()}, soyadim {surname}.</h3>
+        <a href={link}>{text}</a>
       </div>
     )
   }
 
+  return (
+    <div>
+      <WhoAmI name={()=>{return "Rza"}} surname="Talibov" link="https://sethub.az" text="Social network"/>
+      <WhoAmI name={()=> {return "Ayxan"}} surname="Mustafayev" link="https://ayxan.com" text="Saytim" />
+      <WhoAmI name={()=>{ return "Vaqif"}} surname="Huseynov" link="https://Vaqif.az" text="Sport" />
 
+    </div>
+  )
 
-
+}
 export default App;
