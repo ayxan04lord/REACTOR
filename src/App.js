@@ -1,10 +1,7 @@
 import { Component } from 'react'
 import './App.css'
 import './header.css'
-
-
-
-
+import batman from './img/batman.jpg'
 
 class WhoAmI extends Component {
   constructor(props) {
@@ -18,11 +15,25 @@ class WhoAmI extends Component {
     }
   }
 
-  kolbasa = () => {
+  c
+
+  
+  
+
+  yazi = () => {
     this.setState((state) => ({
       count: state.count + 1,
       text: "hello"
     }))
+  }
+
+  changeBgImg = () => {
+    const { position } = this.state;
+    if (position === "batman") {
+      this.setState({
+        bg: `url(${batman})`
+      })
+    }
   }
 
   changeText = (e) => {
@@ -33,19 +44,20 @@ class WhoAmI extends Component {
 
   render() {
     const { name, surname, link } = this.props;
-    const { count, text, position, color } = this.state;
+    const { count, text, position, bg, color } = this.state;
 
     return (
-      <div className='card' style={{ background: color }}>
-        <button onClick={this.kolbasa}>{text}</button>
+      <div className='card' style={{ backgroundImage: bg, color: color }}>
+        <button onClick={this.yazi}>{text}</button>
         <button onClick={() => this.setState({ color: 'red' })}>change red</button>
         <button onClick={() => this.setState({ color: 'green' })}>change green</button>
-        <button onClick={() => this.setState({ color: 'blue' })}>change blue</button>
-        <h1>
+        <button onClick={() => this.setState({ color: 'purple' })}>change purple</button>
+        <h1 style={{ color: color }}>
           My name is {name}, surname is {surname}. <br /> Klik: {count}.
         </h1>
         <a href={link}>Profile</a>
-        <input type="text" onChange={this.changeText} />
+        <input type="text" onChange={this.changeBgImg} />
+        <button onClick={this.changeBgImg}>Sekil Deyis</button>
         <p>Text: {position}</p>
       </div>
     )
