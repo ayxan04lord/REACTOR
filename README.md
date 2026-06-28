@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# ⚛️ Reaktor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React öyrənmək üçün yaradılmış praktik layihə. Hər xüsusiyyət real dünya nümunəsidir.
 
-## Available Scripts
+## 🚀 Başlamaq
 
-In the project directory, you can run:
+```bash
+npm install
+npm run dev
+```
 
-### `npm start`
+Brauzdə aç: [http://localhost:5173](http://localhost:5173)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📦 Skriptlər
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Əmr | Təsvir |
+|-----|--------|
+| `npm run dev` | Dev server işlət |
+| `npm run build` | Production build |
+| `npm run preview` | Build nəticəsini yerli preview et |
 
-### `npm test`
+## 🛠️ Texnologiyalar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React 18** — funksional komponentlər, hooks
+- **Vite** — ultra sürətli build aləti
+- **React Router v6** — client-side routing
+- **prop-types** — props validasiyası
 
-### `npm run build`
+## 📁 Layihə Strukturu
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── components/
+│   ├── Navbar/         # Naviqasiya, tema toggle
+│   ├── WhoAmI/         # Profil kartı
+│   ├── SearchBar/      # Axtarış + əlavə et düyməsi
+│   └── AddUserModal/   # Yeni profil modal formu
+├── pages/
+│   ├── Home/           # Ana səhifə — profil siyahısı
+│   ├── Profile/        # Profil detalları + API məlumatı
+│   ├── About/          # Layihə haqqında
+│   └── NotFound/       # 404 səhifəsi
+├── context/
+│   └── ThemeContext.jsx  # Dark / Light tema (useContext)
+├── hooks/
+│   ├── useLocalStorage.js  # localStorage custom hook
+│   └── useFetch.js         # REST API custom hook
+└── data/
+    └── users.js        # İlkin istifadəçi məlumatları
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧠 Öyrənilən React konseptləri
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Konsept | Harada istifadə olunur |
+|---------|------------------------|
+| `useState` | Kart state-ləri — sayac, rəng, batman |
+| `useEffect` | Tab title, event listener, auto-focus |
+| `useRef` | Input-a focus, DOM müraciəti |
+| `useContext` | Global dark/light tema |
+| `useNavigate` / `useParams` | Router naviqasiyası |
+| Custom hook — `useLocalStorage` | Sayac və user datası saxlanır |
+| Custom hook — `useFetch` | API-dan data çəkmə, loading/error |
+| `prop-types` | Komponent props validasiyası |
 
-### `npm run eject`
+## 🌐 API
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Profil detalları səhifəsində [randomuser.me](https://randomuser.me) API-dan real məlumat çəkilir:
+foto, ad, email, telefon, ölkə, yaş.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ✨ Xüsusiyyətlər
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Profil əlavə et / sil
+- Ada görə axtarış / filtr
+- Batman rejimi 🦇
+- Sayac (localStorage-da saxlanır)
+- Rəng seçici
+- Dark / Light tema
+- Responsiv dizayn
